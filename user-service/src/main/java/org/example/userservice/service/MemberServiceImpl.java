@@ -46,7 +46,7 @@ public class MemberServiceImpl implements MemberService {
                 .orElseThrow();
 
         MemberResponse response = MemberResponse.builder()
-                .memberId(1L)
+                .memberId(memberId)
                 .email(currentMember.getEmail())
                 .name(currentMember.getName())
                 .message("Success")
