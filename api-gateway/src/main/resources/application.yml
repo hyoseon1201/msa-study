@@ -26,6 +26,12 @@ spring:
             - Path=/user-service/**
           filters:
             - CustomFilter
+        - id: post-service
+          uri: lb://POST-SERVICE
+          predicates:
+            - Path=/post-service/**
+          filters:
+            - CustomFilter
       default-filters:
         - name: GlobalFilter
           args:

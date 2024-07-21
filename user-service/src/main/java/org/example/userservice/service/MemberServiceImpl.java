@@ -29,9 +29,12 @@ public class MemberServiceImpl implements MemberService {
         memberRepository.save(newMember);
 
         MemberSignUpResponse response = MemberSignUpResponse.builder()
-                .email(request.email())
+                .data(MemberSignUpResponse.MemberSignUpData.builder()
+                        .email(request.email())
+                        .build())
                 .message("Success")
                 .build();
+
 
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
@@ -46,9 +49,11 @@ public class MemberServiceImpl implements MemberService {
                 .orElseThrow();
 
         MemberResponse response = MemberResponse.builder()
-                .memberId(memberId)
-                .email(currentMember.getEmail())
-                .name(currentMember.getName())
+                .data(MemberResponse.MemberData.builder()
+                        .memberId(memberId)
+                        .email(currentMember.getEmail())
+                        .name(currentMember.getName())
+                        .build())
                 .message("Success")
                 .build();
 

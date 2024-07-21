@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/user-service/members/")
+@RequestMapping("/user-service")
 public class MemberController {
 
     private final MemberService memberService;
@@ -24,4 +24,5 @@ public class MemberController {
     public ResponseEntity<MemberResponse> getMember(@PathVariable("memberId") Long memberId) {
         return memberService.getMemberById(memberId);
     }
+
 }
