@@ -8,13 +8,5 @@ import lombok.Value;
 @Builder
 @Value
 public class MemberSignUpResponse {
-
-    MemberSignUpData data;
-    String message;
-
-    @Builder
-    @Value
-    public static class MemberSignUpData {
-        String email;
-    }
+    String email;
 }
